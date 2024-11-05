@@ -1,22 +1,25 @@
 const eventsDefault = [
+
     {
         id: 1,
-        title: 'Prova de Matemática',
-        start: new Date(2024, 10, 4, 9, 0),
-        end: new Date(2024, 10, 5, 9, 0),
-        desc: 'Prova de Matemática para o 1º período',
+        title: 'Entrega 1',
+        start: new Date(2024, 10, 4, 5, 0),
+        end: new Date(2024, 10, 4, 6, 0),
+        desc: 'primeira Entrega',
         color: 'blue',
-        tipo: 'Prova',
+        tipo: 'Entrega'
     },
+    
     {
         id: 2,
-        title: 'Atividade 2',
-        start: new Date(2024, 10, 4, 5, 0),
-        end: new Date(2024, 10, 4, 6, 0), 
-        desc: 'Nossa segunda atividade',
+        title: 'Entrega 2',
+        start: new Date(2024, 10, 7, 5, 0),
+        end: new Date(2024, 10, 6, 6, 0),
+        desc: 'Segunda Entrega',
         color: 'blue',
-        tipo: 'atividade'
-    }    
+        tipo: 'Entrega'
+    },
+    
 ]
 
 export default eventsDefault
