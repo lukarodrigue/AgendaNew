@@ -13,11 +13,11 @@ const DragAndDropCalendar = withDragAndDrop(Calendar);
 const localizer = momentLocalizer(moment);
 
 function Calendario() {
-    const [eventos, setEventos] = useState(eventsDefault);
-    const [eventosSelecionados, SeteventosSelecionados] = useState(null);
+    const [events, setEvents] = useState(eventsDefault);
+    const [eventsSelect, setEventsSelect] = useState(null);
     const MoverEventos = (data) => {
         const { start, end } = data;
-        const updatedEvents = eventos.map((event) => {
+        const updatedEvents = events.map((event) => {
             if (event.id === data.event.id) {
                 return {
                     ...event,
@@ -28,24 +28,24 @@ function Calendario() {
             return event;
         })
 
-        setEventos(updatedEvents)
+        setEvents(updatedEvents)
     }
 
     const handleEventClick = (evento) => {
-        SeteventosSelecionados(evento);
+        setEventsSelect(evento);
     }
 
-    const ClosehandleEventClick = (evento) => {
-        SeteventosSelecionados(null);
+    const ClosehandleEventClick = () => {
+        setEventsSelect(null);
     }
-    
+
 
     return (
         <div>
             <DragAndDropCalendar
                 defaultDate={moment().toDate()}
                 defaultView='month'
-                events={eventos}
+                events={events}
                 localizer={localizer}
                 onEventDrop={MoverEventos}
                 onEventResize={MoverEventos}
@@ -54,10 +54,10 @@ function Calendario() {
                 className='calendar'
             />
 
-            {eventosSelecionados && (
-                <EventModal 
-                evento = {eventosSelecionados}
-                onClose={ClosehandleEventClick}
+            {eventsSelect && (
+                <EventModal
+                    evento={eventsSelect}
+                    onClose={ClosehandleEventClick}
                 />
             )}
 

@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Calendario from './components/pages/Calendario';
+import Calendar from './components/pages/Calendario';
 
 
 
@@ -11,7 +11,7 @@ import Calendario from './components/pages/Calendario';
 function App() {
   return (
     <div>
-      <Calendario />
+      <Calendar />
     </div>
   );
 }
